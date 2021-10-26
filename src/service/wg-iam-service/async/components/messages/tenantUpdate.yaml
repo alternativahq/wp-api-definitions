@@ -1,0 +1,24 @@
+TenantUpdate:
+  name: tenantUpdate
+  title: Update tenant
+  summary: >-
+    Command to update a particular tenant that is retrived by the provied
+    id.
+  correlationId:
+    location: $message.header#/MQMD/CorrelId
+  contentType: application/json
+  headers:
+    type: object
+    properties:
+      MQMD:
+        type: object
+        properties:
+          CorrelId:
+            type: string
+            minLength: 24
+            maxLength: 24
+            format: binary
+      applicationInstanceId:
+        $ref: '../schemas/wp-iam-service-async-schema.yaml#/applicationInstanceId'
+  payload:
+    $ref: '../schemas/wp-iam-service-async-schema.yaml#/tenantUpdatePayload'

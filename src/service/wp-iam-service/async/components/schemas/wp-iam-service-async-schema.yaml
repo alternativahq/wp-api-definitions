@@ -1,0 +1,118 @@
+tenantCreatePayload:
+  type: object
+  properties:
+    name:
+      type: string
+      required:
+        - 'true'
+      description: Name of the tenant.
+    description:
+      type: string
+      description: Additional info for the tenant.
+    sentAt:
+      $ref: '#/sentAt'
+tenantUpdatePayload:
+  type: object
+  properties:
+    id:
+      type: integer
+      minimum: 0
+      description: Unique numeric identifier of the tenant that is being updated.
+    name:
+      type: string
+      description: Name of the tenant.
+    description:
+      type: string
+      description: Additional info for the tenant.
+    sentAt:
+      $ref: '#/sentAt'
+tenantDeletePayload:
+  type: object
+  properties:
+    id:
+      type: integer
+      minimum: 0
+      description: Unique numeric identifier of the tenant that is being deleted.
+    name:
+      type: string
+      description: Name of the tenant that is beling deleted.
+    sentAt:
+      $ref: '#/sentAt'
+tenantCreatedPayload:
+  type: object
+  properties:
+    id:
+      type: integer
+      minimum: 0
+      description: Unique numeric identifier of the tenant.
+    name:
+      type: string
+      required:
+        - 'true'
+      description: Name of the tenant.
+    description:
+      type: string
+      description: Additional info for the tenant.
+    createdAt:
+      $ref: '#/createdAt'
+    updatedAt:
+      $ref: '#/updatedAt'
+    sentAt:
+      $ref: '#/sentAt'
+tenantUpdatedPayload:
+  type: object
+  properties:
+    id:
+      type: integer
+      minimum: 0
+      description: Unique numeric identifier of the tenant.
+    name:
+      type: string
+      required:
+        - 'true'
+      description: Name of the tenant.
+    description:
+      type: string
+      description: Additional info for the tenant.
+    createdAt:
+      $ref: '#/createdAt'
+    updatedAt:
+      $ref: '#/updatedAt'
+    sentAt:
+      $ref: '#/sentAt'
+tenantDeletedPayload:
+  type: object
+  properties:
+    id:
+      type: integer
+      minimum: 0
+      description: Unique numeric identifier of the tenant.
+    name:
+      type: string
+      required:
+        - 'true'
+      description: Name of the tenant.
+    description:
+      type: string
+      description: Additional info for the tenant.
+    createdAt:
+      $ref: '#/createdAt'
+    updatedAt:
+      $ref: '#/updatedAt'
+    sentAt:
+      $ref: '#/sentAt'
+createdAt:
+  type: string
+  format: date-time
+  description: Date and time when the tenant was created.
+updatedAt:
+  type: string
+  format: date-time
+  description: Date and time when the tenant was updated.
+sentAt:
+  type: string
+  format: date-time
+  description: Date and time when the message was sent.
+applicationInstanceId:
+  description: Unique identifier for a given instance of the publishing application
+  type: string

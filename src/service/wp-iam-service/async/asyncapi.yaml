@@ -1,0 +1,120 @@
+asyncapi: 2.2.0
+info:
+  title: Wodo Platform IAM Service
+  version: 1.0.0
+  description: >-
+    The IAM API provides capabilities to manage tenants, users and their access
+    rights on the wodo platform.
+  license:
+    name: Private
+    url: 'https://wodo.io/license'
+servers:
+  production:
+    url: 'local.dev.com:{port}'
+    protocol: ws
+    description: Wodo Platform Messeage Broker
+    variables:
+      port:
+        description: Secure connection (TLS) is available through port 8883.
+        default: '31788'
+        enum:
+          - '31788'
+          - '31961'
+defaultContentType: application/json
+channels:
+  wodoplatform/iam/tenant/create/1.0/:
+    publish:
+      summary: Send commands to create tenants .
+      operationId: createTenantCommand
+      message:
+        $ref: '#/components/messages/TenantCreate'
+    subscribe:
+      summary: Receives commands to create tenants .
+      operationId: createTenant
+      message:
+        $ref: '#/components/messages/TenantCreate'
+      
+  wodoplatform/iam/tenant/update/1.0/:
+    publish:
+      summary: Send commands to update a particular tenant.
+      operationId: updateTenantCommand
+      message:
+        $ref: '#/components/messages/TenantUpdate'
+    subscribe:
+      summary: Receives commands to update a particular tenant.
+      operationId: updateTenant
+      message:
+        $ref: '#/components/messages/TenantUpdate'
+      
+  wodoplatform/iam/tenant/delete/1.0/:
+    publish:
+      summary: Inform about tenant commands and events.
+      operationId: deleteTenantCommand
+      message:
+        $ref: '#/components/messages/TenantDelete'
+    subscribe:
+      summary: Receives commands to delete a particular tenant.
+      operationId: deleteTenant
+      message:
+        $ref: '#/components/messages/TenantDelete'
+        
+  wodoplatform/iam/tenant/created/1.0/:
+    publish:
+      summary: Inform about tenants created
+      operationId: tenantCreated
+      message:
+        $ref: '#/components/messages/TenantCreated'
+  
+  wodoplatform/iam/tenant/updated/1.0/:
+    publish:
+      summary: Inform about tenants updated
+      operationId: tenantUpdated
+      message:
+        $ref: '#/components/messages/TenantUpdated'
+        
+  wodoplatform/iam/tenant/deleted/1.0/:
+    publish:
+      summary: Inform about tenants deleted
+      operationId: tenantDeleted
+      message:
+        $ref: '#/components/messages/TenantDeleted'
+        
+components:
+  messages:
+    TenantCreate:
+      $ref: './components/messages/tenantCreate.yaml#/TenantCreate'
+    TenantCreated:
+       $ref: './components/messages/tenantCreated.yaml#/TenantCreated'
+    TenantUpdate:
+       $ref: './components/messages/tenantUpdate.yaml#/TenantUpdate'
+    TenantUpdated:
+       $ref: './components/messages/tenantUpdated.yaml#/TenantUpdated'
+    TenantDelete:
+       $ref: './components/messages/tenantDelete.yaml#/TenantDelete'
+    TenantDeleted:
+      $ref: './components/messages/tenantDeleted.yaml#/TenantDeleted'
+  schemas:
+    tenantCreatePayload:
+      $ref: './components/schemas/wp-iam-service-async-schema.yaml#/tenantCreatePayload'
+    tenantUpdatePayload:
+       $ref: './components/schemas/wp-iam-service-async-schema.yaml#/tenantUpdatePayload'
+    tenantDeletePayload:
+       $ref: './components/schemas/wp-iam-service-async-schema.yaml#/tenantDeletePayload'
+    tenantCreatedPayload:
+       $ref: './components/schemas/wp-iam-service-async-schema.yaml#/tenantCreatedPayload'
+    tenantUpdatedPayload:
+        $ref: './components/schemas/wp-iam-service-async-schema.yaml#/tenantUpdatedPayload'
+    tenantDeletedPayload:
+       $ref: './components/schemas/wp-iam-service-async-schema.yaml#/tenantDeletedPayload'
+    createdAt:
+      $ref: './components/schemas/wp-iam-service-async-schema.yaml#/createdAt'
+    updatedAt:
+      $ref: './components/schemas/wp-iam-service-async-schema.yaml#/updatedAt'
+    sentAt:
+       $ref: './components/schemas/wp-iam-service-async-schema.yaml#/sentAt'
+    applicationInstanceId:
+      $ref: './components/schemas/wp-iam-service-async-schema.yaml#/applicationInstanceId'
+  parameters:
+    tenantId:
+      $ref: "./components/parameters.yaml#/tenantId"
+

@@ -1,0 +1,22 @@
+TenantDeleted:
+  name: tenantDeleted
+  title: Tenant deleted
+  summary: Inform about a particular tenant deleted.
+  correlationId:
+    location: $message.header#/MQMD/CorrelId
+  contentType: application/json
+  headers:
+    type: object
+    properties:
+      MQMD:
+        type: object
+        properties:
+          CorrelId:
+            type: string
+            minLength: 24
+            maxLength: 24
+            format: binary
+      applicationInstanceId:
+        $ref: '../schemas/wp-iam-service-async-schema.yaml#/applicationInstanceId'
+  payload:
+    $ref: '../schemas/wp-iam-service-async-schema.yaml#/tenantDeletedPayload'
