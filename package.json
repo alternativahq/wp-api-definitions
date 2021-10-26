@@ -4,7 +4,7 @@
   "description": "All API definitions as service and DTO generations.",
   "author": "Wodo Platform",
   "repository": {
-    "url": "git@github.com:wodo-platform/wodo-nodejs-persistence.git"
+    "url": "git@github.com:wodo-platform/wp-api-definitions.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
