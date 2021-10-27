@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://wodoplatform.io/" target="blank"><img src="https://github.com/wodo-platform/wodo-docs/tree/main/images/wodo_logo.png" width="320" alt="Wodo Platform" /></a>
+  <a href="http://wodoplatform.io/" target="blank"><img src="https://raw.githubusercontent.com/wodo-platform/wodo-docs/main/images/wodo_logo.png" width="320" alt="Wodo Platform" /></a>
 </p>
 
 <div align="center">
