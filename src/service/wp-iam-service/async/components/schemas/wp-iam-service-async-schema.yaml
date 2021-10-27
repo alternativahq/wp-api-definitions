@@ -9,6 +9,18 @@ tenantCreatePayload:
     description:
       type: string
       description: Additional info for the tenant.
+    email:
+      type: string
+      description: Email for the tenant.
+    image:
+      type: string
+      description: Imsge url for the tenant.
+    password:
+      type: string
+      description: Password for the tenant.
+    username:
+      type: string
+      description: User name for the tenant.
     sentAt:
       $ref: '#/sentAt'
 tenantUpdatePayload:
@@ -24,6 +36,18 @@ tenantUpdatePayload:
     description:
       type: string
       description: Additional info for the tenant.
+    email:
+      type: string
+      description: Email for the tenant.
+    image:
+      type: string
+      description: Imsge url for the tenant.
+    password:
+      type: string
+      description: Password for the tenant.
+    username:
+      type: string
+      description: User name for the tenant.
     sentAt:
       $ref: '#/sentAt'
 tenantDeletePayload:
@@ -53,6 +77,18 @@ tenantCreatedPayload:
     description:
       type: string
       description: Additional info for the tenant.
+    email:
+      type: string
+      description: Email for the tenant.
+    image:
+      type: string
+      description: Imsge url for the tenant.
+    password:
+      type: string
+      description: Password for the tenant.
+    username:
+      type: string
+      description: User name for the tenant.
     createdAt:
       $ref: '#/createdAt'
     updatedAt:
@@ -74,6 +110,18 @@ tenantUpdatedPayload:
     description:
       type: string
       description: Additional info for the tenant.
+    email:
+      type: string
+      description: Email for the tenant.
+    image:
+      type: string
+      description: Imsge url for the tenant.
+    password:
+      type: string
+      description: Password for the tenant.
+    username:
+      type: string
+      description: User name for the tenant.
     createdAt:
       $ref: '#/createdAt'
     updatedAt:
@@ -95,6 +143,18 @@ tenantDeletedPayload:
     description:
       type: string
       description: Additional info for the tenant.
+    email:
+      type: string
+      description: Email for the tenant.
+    image:
+      type: string
+      description: Imsge url for the tenant.
+    password:
+      type: string
+      description: Password for the tenant.
+    username:
+      type: string
+      description: User name for the tenant.
     createdAt:
       $ref: '#/createdAt'
     updatedAt:
