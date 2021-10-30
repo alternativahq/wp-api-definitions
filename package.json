@@ -1,6 +1,6 @@
 {
   "name": "@wodo-platform/wp-api-definitions",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "All API definitions as service and DTO generations.",
   "author": "Wodo Platform",
   "repository": {
