@@ -1,0 +1,4 @@
+tenantId:
+  description: The ID of the tenant.
+  schema:
+    type: string

@@ -1,0 +1,232 @@
+gamingLoungeCreatePayload:
+  type: object
+  properties:
+    type:
+      type: integer
+      required:
+        - 'true'
+      description: Type of the gaming lounge. Expected integeer values are 1 (Standard), 2 (Challanger)
+    state:
+      type: integer
+      required:
+        - 'true'
+      description: Current states of gaming lounge.Expected integer values are 1 (INITIALIZED) , 2 (AWAIT), 3 (INGAME), 4 (POSTGAME), 5 (CLOSED)
+    gameTypeId:
+      type: integer
+      required:
+        - 'true'
+      description: Game type id. Each supported game such as agario, snake has a unique id in the system
+    assetId:
+      type: integer
+      required:
+        - 'true'
+      description: Cyrpto currency asset id for the gaming lounge.
+    enterenceFee:
+      type: integer
+      required:
+        - 'true'
+      description: Fee to pay with the asset in order to join a gaming lounge.
+    prize:
+      type: integer
+      required:
+        - 'true'
+      description: Prize distribution to be paid based on game leader board.
+    sentAt:
+      $ref: '#/sentAt'
+gamingLoungeUpdatePayload:
+  type: object
+  properties:
+    id:
+      type: integer
+      minimum: 0
+      description: Unique numeric identifier of the gaming lounge that is being updated.
+    type:
+      type: integer
+      required:
+        - 'true'
+      description: Type of the gaming lounge. Expected integeer values are 1 (Standard), 2 (Challanger)
+    state:
+      type: integer
+      required:
+        - 'true'
+      description: Current states of gaming lounge.Expected integer values are 1 (INITIALIZED) , 2 (AWAIT), 3 (INGAME), 4 (POSTGAME), 5 (CLOSED)
+    gameTypeId:
+      type: integer
+      required:
+        - 'true'
+      description: Game type id. Each supported game such as agario, snake has a unique id in the system
+    assetId:
+      type: integer
+      required:
+        - 'true'
+      description: Cyrpto currency asset id for the gaming lounge.
+    enterenceFee:
+      type: integer
+      required:
+        - 'true'
+      description: Fee to pay with the asset in order to join a gaming lounge.
+    prize:
+      type: integer
+      required:
+        - 'true'
+      description: Prize distribution to be paid based on game leader board.
+    sentAt:
+      $ref: '#/sentAt'
+gamingLoungeDeletePayload:
+  type: object
+  properties:
+    id:
+      type: integer
+      minimum: 0
+      description: Unique numeric identifier of the gaming lounge that is being deleted.
+    sentAt:
+      $ref: '#/sentAt'
+gamingLoungeCreatedPayload:
+  type: object
+  properties:
+    id:
+      type: integer
+      minimum: 0
+      description: Unique numeric identifier of the gaming lounge.
+    type:
+      type: integer
+      required:
+        - 'true'
+      description: Type of the gaming lounge. Expected integeer values are 1 (Standard), 2 (Challanger)
+    state:
+      type: integer
+      required:
+        - 'true'
+      description: Current states of gaming lounge.Expected integer values are 1 (INITIALIZED) , 2 (AWAIT), 3 (INGAME), 4 (POSTGAME), 5 (CLOSED)
+    gameTypeId:
+      type: integer
+      required:
+        - 'true'
+      description: Game type id. Each supported game such as agario, snake has a unique id in the system
+    assetId:
+      type: integer
+      required:
+        - 'true'
+      description: Cyrpto currency asset id for the gaming lounge.
+    enterenceFee:
+      type: integer
+      required:
+        - 'true'
+      description: Fee to pay with the asset in order to join a gaming lounge.
+    prize:
+      type: integer
+      required:
+        - 'true'
+      description: Prize distribution to be paid based on game leader board.
+    createdAt:
+      $ref: '#/createdAt'
+    updatedAt:
+      $ref: '#/updatedAt'
+    sentAt:
+      $ref: '#/sentAt'
+gamingLoungeUpdatedPayload:
+  type: object
+  properties:
+    id:
+      type: integer
+      minimum: 0
+      description: Unique numeric identifier of the gaming lounge.
+    type:
+      type: integer
+      required:
+        - 'true'
+      description: Type of the gaming lounge. Expected integeer values are 1 (Standard), 2 (Challanger)
+    state:
+      type: integer
+      required:
+        - 'true'
+      description: Current states of gaming lounge.Expected integer values are 1 (INITIALIZED) , 2 (AWAIT), 3 (INGAME), 4 (POSTGAME), 5 (CLOSED)
+    gameTypeId:
+      type: integer
+      required:
+        - 'true'
+      description: Game type id. Each supported game such as agario, snake has a unique id in the system
+    assetId:
+      type: integer
+      required:
+        - 'true'
+      description: Cyrpto currency asset id for the gaming lounge.
+    enterenceFee:
+      type: integer
+      required:
+        - 'true'
+      description: Fee to pay with the asset in order to join a gaming lounge.
+    prize:
+      type: integer
+      required:
+        - 'true'
+      description: Prize distribution to be paid based on game leader board.
+    sentAt:
+      $ref: '#/sentAt'
+    createdAt:
+      $ref: '#/createdAt'
+    updatedAt:
+      $ref: '#/updatedAt'
+gamingLoungeDeletedPayload:
+  type: object
+  properties:
+    id:
+      type: integer
+      minimum: 0
+      description: Unique numeric identifier of the gaming lounge.
+    type:
+      type: integer
+      required:
+        - 'true'
+      description: Type of the gaming lounge. Expected integeer values are 1 (Standard), 2 (Challanger)
+    state:
+      type: integer
+      required:
+        - 'true'
+      description: Current states of gaming lounge.Expected integer values are 1 (INITIALIZED) , 2 (AWAIT), 3 (INGAME), 4 (POSTGAME), 5 (CLOSED)
+    gameTypeId:
+      type: integer
+      required:
+        - 'true'
+      description: Game type id. Each supported game such as agario, snake has a unique id in the system
+    assetId:
+      type: integer
+      required:
+        - 'true'
+      description: Cyrpto currency asset id for the gaming lounge.
+    enterenceFee:
+      type: integer
+      required:
+        - 'true'
+      description: Fee to pay with the asset in order to join a gaming lounge.
+    prize:
+      type: integer
+      required:
+        - 'true'
+      description: Prize distribution to be paid based on game leader board.
+    deleted:
+      type: "boolean"
+      required:
+        - 'true'
+      description: Boolean flag to determine soft delete.
+    sentAt:
+      $ref: '#/sentAt'
+    createdAt:
+      $ref: '#/createdAt'
+    updatedAt:
+      $ref: '#/updatedAt'
+createdAt:
+  type: string
+  format: date-time
+  description: Date and time when the gaming lounge was created.
+updatedAt:
+  type: string
+  format: date-time
+  description: Date and time when the gaming lounge was updated.
+sentAt:
+  type: string
+  format: date-time
+  description: Date and time when the message was sent.
+applicationInstanceId:
+  description: Unique identifier for a given instance of the publishing application
+  type: string

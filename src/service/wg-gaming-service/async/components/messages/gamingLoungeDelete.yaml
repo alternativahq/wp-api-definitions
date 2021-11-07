@@ -1,0 +1,22 @@
+GamingLoungeDelete:
+  name: gamingLoungeDelete
+  title: Delete Gaming Lounge
+  summary: Command to delete a particular gaming lounge by id or name. Id takes precedance if both of the parameters are provided
+  correlationId:
+    location: $message.header#/MQMD/CorrelId
+  contentType: application/json
+  headers:
+    type: object
+    properties:
+      MQMD:
+        type: object
+        properties:
+          CorrelId:
+            type: string
+            minLength: 24
+            maxLength: 24
+            format: binary
+      applicationInstanceId:
+        $ref: '../schemas/wg-gaming-service-async-schema.yaml#/applicationInstanceId'
+  payload:
+    $ref: '../schemas/wg-gaming-service-async-schema.yaml#/gamingLoungeDeletePayload'

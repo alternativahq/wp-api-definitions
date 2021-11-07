@@ -1,0 +1,24 @@
+GamingLoungeUpdate:
+  name: gamingLoungeUpdate
+  title: Update Gaming Lounge
+  summary: >-
+    Command to update a particular gaming lounge that is retrived by the provied
+    id.
+  correlationId:
+    location: $message.header#/MQMD/CorrelId
+  contentType: application/json
+  headers:
+    type: object
+    properties:
+      MQMD:
+        type: object
+        properties:
+          CorrelId:
+            type: string
+            minLength: 24
+            maxLength: 24
+            format: binary
+      applicationInstanceId:
+        $ref: '../schemas/wg-gaming-service-async-schema.yaml#/applicationInstanceId'
+  payload:
+    $ref: '../schemas/wg-gaming-service-async-schema.yaml#/gamingLoungeUpdatePayload'

@@ -1,0 +1,119 @@
+asyncapi: 2.2.0
+info:
+  title: Wodo Gaming Service
+  version: 1.0.0
+  description: >-
+    The Gaming API provides capabilities to manage gaming lounges, game servers and entire gaming experience flow.
+  license:
+    name: Private
+    url: 'https://wodo.io/license'
+servers:
+  production:
+    url: 'local.dev.com:{port}'
+    protocol: ws
+    description: Wodo Platform Messeage Broker
+    variables:
+      port:
+        description: Secure connection (TLS) is available through port 8883.
+        default: '31788'
+        enum:
+          - '31788'
+          - '31961'
+defaultContentType: application/json
+channels:
+  wodoplatform/wg/lounge/create/1.0/:
+    publish:
+      summary: Send commands to create gaming lounges .
+      operationId: createGamingLoungeCommand
+      message:
+        $ref: '#/components/messages/GamingLoungeCreate'
+    subscribe:
+      summary: Receives commands to create gaming lounges .
+      operationId: createGamingLounge
+      message:
+        $ref: '#/components/messages/GamingLoungeCreate'
+      
+  wodoplatform/wg/lounge/update/1.0/:
+    publish:
+      summary: Send commands to update a particular gaming lounge.
+      operationId: updateGamingLoungeCommand
+      message:
+        $ref: '#/components/messages/GamingLoungeUpdate'
+    subscribe:
+      summary: Receives commands to update a particular gaming lounge.
+      operationId: updateGamingLounge
+      message:
+        $ref: '#/components/messages/GamingLoungeUpdate'
+      
+  wodoplatform/wg/lounge/delete/1.0/:
+    publish:
+      summary: Inform about gaming lounge commands and events.
+      operationId: deleteGamingLoungeCommand
+      message:
+        $ref: '#/components/messages/GamingLoungeDelete'
+    subscribe:
+      summary: Receives commands to delete a particular gaming lounge.
+      operationId: deleteGamingLounge
+      message:
+        $ref: '#/components/messages/GamingLoungeDelete'
+        
+  wodoplatform/wg/lounge/created/1.0/:
+    publish:
+      summary: Inform about gaming lounges created
+      operationId: gamingLoungeCreated
+      message:
+        $ref: '#/components/messages/GamingLoungeCreated'
+  
+  wodoplatform/wg/lounge/updated/1.0/:
+    publish:
+      summary: Inform about gaming lounges updated
+      operationId: gamingLoungeUpdated
+      message:
+        $ref: '#/components/messages/GamingLoungeUpdated'
+        
+  wodoplatform/wg/lounge/deleted/1.0/:
+    publish:
+      summary: Inform about gaming lounges deleted
+      operationId: gamingLoungeDeleted
+      message:
+        $ref: '#/components/messages/GamingLoungeDeleted'
+        
+components:
+  messages:
+    GamingLoungeCreate:
+      $ref: './components/messages/gamingLoungeCreate.yaml#/GamingLoungeCreate'
+    GamingLoungeCreated:
+       $ref: './components/messages/gamingLoungeCreated.yaml#/GamingLoungeCreated'
+    GamingLoungeUpdate:
+       $ref: './components/messages/gamingLoungeUpdate.yaml#/GamingLoungeUpdate'
+    GamingLoungeUpdated:
+       $ref: './components/messages/gamingLoungeUpdated.yaml#/GamingLoungeUpdated'
+    GamingLoungeDelete:
+       $ref: './components/messages/gamingLoungeDelete.yaml#/GamingLoungeDelete'
+    GamingLoungeDeleted:
+      $ref: './components/messages/gamingLoungeDeleted.yaml#/GamingLoungeDeleted'
+  schemas:
+    gamingLoungeCreatePayload:
+      $ref: './components/schemas/wg-gaming-service-async-schema.yaml#/gamingLoungeCreatePayload'
+    gamingLoungeUpdatePayload:
+       $ref: './components/schemas/wg-gaming-service-async-schema.yaml#/gamingLoungeUpdatePayload'
+    gamingLoungeDeletePayload:
+       $ref: './components/schemas/wg-gaming-service-async-schema.yaml#/gamingLoungeDeletePayload'
+    gamingLoungeCreatedPayload:
+       $ref: './components/schemas/wg-gaming-service-async-schema.yaml#/gamingLoungeCreatedPayload'
+    gamingLoungeUpdatedPayload:
+        $ref: './components/schemas/wg-gaming-service-async-schema.yaml#/gamingLoungeUpdatedPayload'
+    gamingLoungeDeletedPayload:
+       $ref: './components/schemas/wg-gaming-service-async-schema.yaml#/gamingLoungeDeletedPayload'
+    createdAt:
+      $ref: './components/schemas/wg-gaming-service-async-schema.yaml#/createdAt'
+    updatedAt:
+      $ref: './components/schemas/wg-gaming-service-async-schema.yaml#/updatedAt'
+    sentAt:
+       $ref: './components/schemas/wg-gaming-service-async-schema.yaml#/sentAt'
+    applicationInstanceId:
+      $ref: './components/schemas/wg-gaming-service-async-schema.yaml#/applicationInstanceId'
+  parameters:
+    tenantId:
+      $ref: "./components/parameters.yaml#/tenantId"
+
