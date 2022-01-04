@@ -1,0 +1,122 @@
+blockchainTransactionSendPayload:
+  type: object
+  properties:
+    senderId:
+      type: string
+      required:
+        - 'true'
+      description: Sender of amount carried out in blockchain transaction. It can be a user id or an application id. Id referes to an entity defined and validated in Wodo Platform
+    receiverId:
+      type: string
+      description: Receiver of amount carried out in blockchain transaction. It can be a user id or an application id. Id referes to an entity defined and validated in Wodo Platform
+    assetId:
+      type: string
+      description: Unique id of a blockchain asset defined in Wodo Platform. Supported assets, such as banano, nano are determined by a unique id in Wodo Platform
+    fromAccountAddress:
+      type: string
+      description: Blockchain account address to deduct the amount. The account is associated to user's wallets. 
+    toAccountAddress:
+      type: string
+      description: Blockchain account address to deduct the amount. The account is associated to user's wallets. 
+    amount:
+      type: string
+      description: Amount of asset in the transaction.
+    attribute1:
+      type: string
+    attribute2:
+      type: string
+    attribute3:
+      type: string
+    attribute4:
+      type: string
+    sentAt:
+      $ref: '#/sentAt'
+blockchainTransactionInitiatedPayload:
+  type: object
+  properties:
+    senderId:
+      type: string
+      required:
+        - 'true'
+      description: Sender of amount carried out in blockchain transaction. It can be a user id or an application id. Id referes to an entity defined and validated in Wodo Platform
+    receiverId:
+      type: string
+      description: Receiver of amount carried out in blockchain transaction. It can be a user id or an application id. Id referes to an entity defined and validated in Wodo Platform
+    assetId:
+      type: string
+      description: Unique id of a blockchain asset defined in Wodo Platform. Supported assets, such as banano, nano are determined by a unique id in Wodo Platform
+    fromAccountAddress:
+      type: string
+      description: Blockchain account address to deduct the amount. The account is associated to user's wallets. 
+    toAccountAddress:
+      type: string
+      description: Blockchain account address to deduct the amount. The account is associated to user's wallets. 
+    amount:
+      type: string
+      description: Amount of asset in the transaction.
+    attribute1:
+      type: string
+    attribute2:
+      type: string
+    attribute3:
+      type: string
+    attribute4:
+      type: string
+    sentAt:
+      $ref: '#/sentAt'
+blockchainTransactionSentPayload:
+  type: object
+  properties:
+    senderId:
+      type: string
+      required:
+        - 'true'
+      description: Sender of amount carried out in blockchain transaction. It can be a user id or an application id. Id referes to an entity defined and validated in Wodo Platform
+    receiverId:
+      type: string
+      description: Receiver of amount carried out in blockchain transaction. It can be a user id or an application id. Id referes to an entity defined and validated in Wodo Platform
+    assetId:
+      type: string
+      description: Unique id of a blockchain asset defined in Wodo Platform. Supported assets, such as banano, nano are determined by a unique id in Wodo Platform
+    fromAccountAddress:
+      type: string
+      description: Blockchain account address to deduct the amount. The account is associated to user's wallets. 
+    toAccountAddress:
+      type: string
+      description: Blockchain account address to deduct the amount. The account is associated to user's wallets. 
+    amount:
+      type: string
+      description: Amount of asset in the transaction.
+    attribute1:
+      type: string
+    attribute2:
+      type: string
+    attribute3:
+      type: string
+    attribute4:
+      type: string
+    sentAt:
+      $ref: '#/sentAt'
+createdAt:
+  type: string
+  format: date-time
+  description: Date and time when the tenant was created.
+updatedAt:
+  type: string
+  format: date-time
+  description: Date and time when the tenant was updated.
+sentAt:
+  type: string
+  format: date-time
+  description: Date and time when the message was sent.
+applicationInstanceId:
+  description: Unique identifier for a given instance of the publishing application
+  type: string
+blockChainTransactionAttribute:
+  type: object
+  x-parser-schema-id: bca
+  properties:
+    attr_key:
+      type: string
+    attr_value:
+      type: string

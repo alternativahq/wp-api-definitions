@@ -7,6 +7,7 @@ export class AppService {
     '<li><a href="/wp-iam-service-api.html">Wodo Platform IAM Service API</a></li>'+
     '<li><a href="/wg-iam-service-api.html">Wodo Gaming IAM Service API</a></li>'+
     '<li><a href="/wg-gaming-service-api.html">Wodo Gaming Service API</a></li>'+
+    '<li><a href="/wg-blockchain-payment-service-api.html">Wodo Platform Blockchain Payment Service API</a></li>'+
     '</ul>';
   }
 }

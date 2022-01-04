@@ -1,0 +1,22 @@
+blockchainTransactionSent:
+  name: blockchainTransactionSent
+  title: Blockchain transaction sent
+  summary: Inform about a new blockchain transaction.
+  correlationId:
+    location: $message.header#/MQMD/CorrelId
+  contentType: application/json
+  headers:
+    type: object
+    properties:
+      MQMD:
+        type: object
+        properties:
+          CorrelId:
+            type: string
+            minLength: 24
+            maxLength: 24
+            format: binary
+      applicationInstanceId:
+        $ref: '../schemas/wp-blockchain-payment-service-async-schema.yaml#/applicationInstanceId'
+  payload:
+    $ref: '../schemas/wp-blockchain-payment-service-async-schema.yaml#/blockchainTransactionSentPayload'

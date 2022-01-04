@@ -9,7 +9,7 @@ const Generator = require('@asyncapi/generator/lib/generator');
 import * as fs from 'fs';
 import { exit } from 'process';
 
-const serviceName = "wg-gaming-service"
+const serviceName = "wp-blockchain-payment-service"
 console.log("Running API docs generation script for " + serviceName);
 const generatedRootDir = "dist/public/";
 

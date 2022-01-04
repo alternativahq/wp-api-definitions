@@ -1,6 +1,6 @@
 {
   "name": "@wodo-platform/wp-api-definitions",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "All API definitions as service and DTO generations.",
   "author": "Wodo Platform",
   "repository": {
@@ -14,9 +14,9 @@
     "schema": "./node_modules/@wodo-platform/wodo-nodejs-persistence/prisma/schema.prisma"
   },
   "scripts": {
-    "prebuild": "chmod -R a+x node_modules && cross-env-shell PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true rimraf dist && ./node_modules/.bin/ts-node --cwd ./src/service/wp-iam-service/async/ generateAPIDTOs.ts && ./node_modules/.bin/ts-node --cwd ./src/service/wg-iam-service/async/ generateAPIDTOs.ts && ./node_modules/.bin/ts-node --cwd ./src/service/wg-gaming-service/async/ generateAPIDTOs.ts",
+    "prebuild": "chmod -R a+x node_modules && cross-env-shell PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true rimraf dist && ./node_modules/.bin/ts-node --cwd ./src/service/wp-iam-service/async/ generateAPIDTOs.ts && ./node_modules/.bin/ts-node --cwd ./src/service/wg-iam-service/async/ generateAPIDTOs.ts && ./node_modules/.bin/ts-node --cwd ./src/service/wg-gaming-service/async/ generateAPIDTOs.ts && ./node_modules/.bin/ts-node --cwd ./src/service/wp-blockchain-payment-service/async/ generateAPIDTOs.ts",
     "build": "cross-env-shell PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true nest build",
-    "postbuild": "cross-env-shell PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true ./node_modules/.bin/ts-node --cwd ./src/service/wp-iam-service/async/ generateAPIDocs.ts && ./node_modules/.bin/ts-node --cwd ./src/service/wg-iam-service/async/ generateAPIDocs.ts && ./node_modules/.bin/ts-node --cwd ./src/service/wg-gaming-service/async/ generateAPIDocs.ts && cp -r client/* dist/public/.",
+    "postbuild": "cross-env-shell PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true ./node_modules/.bin/ts-node --cwd ./src/service/wp-iam-service/async/ generateAPIDocs.ts && ./node_modules/.bin/ts-node --cwd ./src/service/wg-iam-service/async/ generateAPIDocs.ts && ./node_modules/.bin/ts-node --cwd ./src/service/wg-gaming-service/async/ generateAPIDocs.ts && ./node_modules/.bin/ts-node --cwd ./src/service/wp-blockchain-payment-service/async/ generateAPIDocs.ts && cp -r client/* dist/public/.",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "cross-env-shell PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true nest start",
     "start:dev": "nest start --watch",
@@ -31,9 +31,9 @@
     "generateDocs": "ag asyncapi.yaml @asyncapi/html-template -o "
   },
   "dependencies": {
-    "@asyncapi/generator": "^1.8.14",
+    "@asyncapi/generator": "^1.8.21",
     "@asyncapi/html-template": "^0.23.11",
-    "@asyncapi/modelina": "^0.39.0",
+    "@asyncapi/modelina": "^0.39.6",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/microservices": "^8.0.11",

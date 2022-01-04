@@ -1,4 +1,4 @@
-import { parse } from '@asyncapi/parser';
+import { parse } from '@asyncapi/modelina/node_modules/@asyncapi/parser/lib';
 
 //var Generator = require('@asyncapi/generator/lib')
 

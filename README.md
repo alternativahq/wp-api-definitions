@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://wodoplatform.io/" target="blank"><img src="client/wodo_logo.png" width="320" alt="Wodo Platform" /></a>
+  <a href="https://wodo.io/" target="blank"><img src="https://github.com/wodo-platform/wg-web-ui/blob/master/app/img/_src/branding/logo_purple.png" width="320" alt="Wodo Platform" /></a>
 </p>
 
 <div align="center">
@@ -44,6 +44,7 @@
 
 
 - [Overview](#overview)
+- [API Driven Design](#api-driven-design)
 - [Async API Definitions](#async-api-definitions)
   - [Document Generations](#document-generations)
   - [Code Generation](#code-generation)
@@ -57,6 +58,19 @@
 ## Overview
 
 Wodo Api Definitions module include system wide APIs, transports and schema definitions that are starting point while features are designed and developed.
+
+## API Driven Design
+
+If you do not work on important problem, it is unlikely you'will do important work. Richard Hamming.
+
+We all talk about APIs in the software world all the time. If we need to define an API in the simplest form, the definition would be "An API is characteristic of the way how two pieces of software can communicate over a transport in a fast, secure, easily programable way". If there are missing API features and incomplete API definitions, a software system becomes hard to integrate and change. Here in the wodo netowrk, we design APIs to solve these two important problems by relying on API definition fundamentals.
+
+We follow the following proven principles to design our APIs
+
+* What developers really want from your API
+* How to make your API stand out from the crowd
+* Strategies for driving broad developer adoption
+* A fool-proof way to design for great user experience
 
 ## Async API Definitions
 
@@ -132,7 +146,7 @@ Email (this IS public): wodo-platform@users.noreply.github.com
 Once you log in successfully, you will see the messafe below:
 
 ```bash
-Logged in as serhattanrikut to scope @wodo-platform on https://npm.pkg.github.com/.
+Logged in as your_git_user to scope @wodo-platform on https://npm.pkg.github.com/.
 ```
 Publish the package:
 

@@ -1,0 +1,77 @@
+asyncapi: 2.2.0
+info:
+  title: Wodo Platform Blockchain Payment Service
+  version: 1.0.0
+  description: >-
+    The Blockchain Payment Service provides capabilities to send, receive blockchain transactions over different blockchain networks.
+  license:
+    name: Private
+    url: 'https://wodo.io/license'
+servers:
+  production:
+    url: 'local.dev.com:{port}'
+    protocol: ws
+    description: Wodo Platform Messeage Broker
+    variables:
+      port:
+        description: Secure connection (TLS) is available through port 8883.
+        default: '31788'
+        enum:
+          - '31788'
+          - '31961'
+defaultContentType: application/json
+channels:
+  wodoplatform/blockchain/transaction/send/1.0/:
+    publish:
+      summary: Send commands to initiate transactions on blockchain networks.
+      operationId: blockchainTransactionSendCommand
+      message:
+        $ref: '#/components/messages/blockchainTransactionSend'
+    subscribe:
+      summary: Receives to initiate transactions on blockchain networks.
+      operationId: blockchainTransactionSend
+      message:
+        $ref: '#/components/messages/blockchainTransactionSend'
+      
+  wodoplatform/blockchain/transaction/initiated/1.0/:
+    publish:
+      summary: Inform about a blockchain transaction is initiated events.
+      operationId: blockchainTransactionInitiated
+      message:
+        $ref: '#/components/messages/blockchainTransactionInitiated'
+      
+  wodoplatform/blockchain/transaction/sent/1.0/:
+    publish:
+      summary: Inform about a blockchain transaction is sent(completed) events.
+      operationId: blockchainTransactionSent
+      message:
+        $ref: '#/components/messages/blockchainTransactionSent'
+        
+        
+components:
+  messages:
+    blockchainTransactionSend:
+      $ref: './components/messages/blockchainTransactionSend.yaml#/blockchainTransactionSend'
+    blockchainTransactionInitiated:
+       $ref: './components/messages/blockchainTransactionInitiated.yaml#/blockchainTransactionInitiated'
+    blockchainTransactionSent:
+       $ref: './components/messages/blockchainTransactionSent.yaml#/blockchainTransactionSent'
+  schemas:
+    blockchainTransactionSendPayload:
+      $ref: './components/schemas/wp-blockchain-payment-service-async-schema.yaml#/blockchainTransactionSendPayload'
+    blockchainTransactionInitiatedPayload:
+       $ref: './components/schemas/wp-blockchain-payment-service-async-schema.yaml#/blockchainTransactionInitiatedPayload'
+    blockchainTransactionSentPayload:
+       $ref: './components/schemas/wp-blockchain-payment-service-async-schema.yaml#/blockchainTransactionSentPayload'
+    createdAt:
+      $ref: './components/schemas/wp-blockchain-payment-service-async-schema.yaml#/createdAt'
+    updatedAt:
+      $ref: './components/schemas/wp-blockchain-payment-service-async-schema.yaml#/updatedAt'
+    sentAt:
+       $ref: './components/schemas/wp-blockchain-payment-service-async-schema.yaml#/sentAt'
+    applicationInstanceId:
+      $ref: './components/schemas/wp-blockchain-payment-service-async-schema.yaml#/applicationInstanceId'
+  parameters:
+    tenantId:
+      $ref: "./components/parameters.yaml#/tenantId"
+

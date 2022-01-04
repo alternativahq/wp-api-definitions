@@ -1,0 +1,22 @@
+blockchainTransactionInitiated:
+  name: blockchainTransactionInitiated
+  title:  Blockchain Transaction Initiated
+  summary: Event is generated once a blockchain transaction is committed to blockchain network and most probably in [in progress] status. Some networks return a correlation id to follow the transaction status on thier network since blockchain transaction are slow.
+  correlationId:
+    location: $message.header#/MQMD/CorrelId
+  contentType: application/json
+  headers:
+    type: object
+    properties:
+      MQMD:
+        type: object
+        properties:
+          CorrelId:
+            type: string
+            minLength: 24
+            maxLength: 24
+            format: binary
+      applicationInstanceId:
+        $ref: '../schemas/wp-blockchain-payment-service-async-schema.yaml#/applicationInstanceId'
+  payload:
+    $ref: '../schemas/wp-blockchain-payment-service-async-schema.yaml#/blockchainTransactionInitiatedPayload'

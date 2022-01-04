@@ -1,7 +1,8 @@
 # compiled output
 /dist
 /node_modules
-/api/dto
+*/api/dto
+*/api/dto/*
 
 # Logs
 logs

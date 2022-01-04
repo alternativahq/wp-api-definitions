@@ -1,4 +1,4 @@
-import { parse } from '@asyncapi/parser';
+import { parse } from '@asyncapi/modelina/node_modules/@asyncapi/parser/lib';
 import { TypeScriptGenerator } from '@asyncapi/modelina';
 import * as fs from 'fs';
 import { exit } from 'process';

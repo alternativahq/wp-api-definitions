@@ -2,9 +2,6 @@
 FROM bitnami/node:14 as builder
 
 ENV NODE_ENV="test"
-
-ENV NPM_USER="serhattanrikut"
-ENV NPM_PASS="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"
 ENV NPM_EMAIL="wodo-platform@users.noreply.github.com"
 ENV NPM_REGISTRY="https://npm.pkg.github.com"
 ENV NPM_SCOPE="@wodo-platform"

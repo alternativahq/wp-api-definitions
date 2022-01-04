@@ -3,7 +3,7 @@ import { TypeScriptGenerator } from '@asyncapi/modelina';
 import * as fs from 'fs';
 import { exit } from 'process';
 
-const serviceName = "wg-iam-service"
+const serviceName = "wp-blockchain-payment-service"
 console.log("Running API paylod(dto) generation script for " + serviceName);
 const generatedRootDir = "src/api/dto/"+serviceName+"/";
 
@@ -14,13 +14,13 @@ if(fs.existsSync(generatedRootDir)) {
 fs.mkdirSync(generatedRootDir,{recursive : true});
 
 
-const file = fs.readFileSync('src/service/wg-iam-service/async/asyncapi.yaml', 'utf-8');
+const file = fs.readFileSync('src/service/'+serviceName+'/async/asyncapi.yaml', 'utf-8');
 
 const generator = new TypeScriptGenerator();
 
 export async function generate(): Promise<void> {
     try {
-        const parsedDoc = await parse(file, {path:"src/service/wg-iam-service/async/"});
+        const parsedDoc = await parse(file, {path:"src/service/"+serviceName+"/async/"});
         const models = await generator.generate(parsedDoc as any);
         console.log("models generated in memory.");
         for (const model of models) {
