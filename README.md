@@ -130,7 +130,7 @@ The REST Api is genereted by the swagger. To add a new REST API, please follow t
 
 Run the following command to build the project, generate docs and run it in production mode.
 
-* Run `npm run build` . This will generated asynch event APIs docs and synch API docs.
+* Run `npm run build` . This will generated asynch event APIs docs and synch API docs.If you notice any errors in the console, you can ignore them as long as the build succeeds with a `done` message.
 * Run `npm run start:prod` . This will start the project in the prodiction mode. You can reach all docs at http://localhost:3003/
 
 ## Github Actions
