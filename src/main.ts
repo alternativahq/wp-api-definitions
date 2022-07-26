@@ -11,12 +11,12 @@ async function bootstrap() {
     .setTitle('Wodo Platform API Definitions')
     .setDescription('Wodo Platform API definitions module')
     .setVersion('1.0')
-    .setBasePath('api')
-    .addBearerAuth()
+    .setBasePath(`api`)
+    //.addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('/docs', app, document);
 
-  await app.listen(3000);
+  await app.listen(3003);
 }
 bootstrap();

@@ -51,6 +51,7 @@
   - [Model Generation](#model-generation)
   - [Message Validation](#message-validation)
 - [Sync API Definitions](#sync-api-definitions)
+- [Build](#build)
 - [Github Actions](#github-actions)
 - [Publish API Definitions as NPM Package Locally](#publish-api-definitions-as-npm-package-locally)
 
@@ -119,7 +120,18 @@ https://github.com/WaleedAshraf/asyncapi-validator
 
 ## Sync API Definitions
 
-To be updated
+The REST Api is genereted by the swagger. To add a new REST API, please follow the stesp below:
+
+* Add your controller REST API class, methods and relevant dto class under src/api folder. NestJS framework handles swagger REST API doc generation.
+* Add your new controller class to `controllers` list in app.module.ts file.
+* Run npm start to see the generated docs at http://localhost:3003/docs/
+
+## Build
+
+Run the following command to build the project, generate docs and run it in production mode.
+
+* Run `npm run build` . This will generated asynch event APIs docs and synch API docs.
+* Run `npm run start:prod` . This will start the project in the prodiction mode. You can reach all docs at http://localhost:3003/
 
 ## Github Actions
 
