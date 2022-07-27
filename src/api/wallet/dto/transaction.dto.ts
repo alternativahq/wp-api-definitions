@@ -1,6 +1,6 @@
 import { AssetEnum } from "./asset.enum";
 
-export class DepositDto {
+export class TransactionDto {
     from:string;
     to:string;
     amount:string;
