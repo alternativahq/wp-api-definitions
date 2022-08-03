@@ -5,5 +5,6 @@ export enum AssetEnum {
     Ethereum = "ETH",
     Avalanche = 'AVAX',
     Binance_Smart_chain = "BSC",
-    solana = "SOL"
+    solana = "SOL",
+    TURKISH_LIRA = "TRY",
   }
