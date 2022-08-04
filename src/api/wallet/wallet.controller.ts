@@ -7,7 +7,7 @@ import { SendTransactionRequestDto } from './transaction/dtos/send-transaction.r
 import { TransactionStateEnum } from './transaction/dtos/tansaction-state.enum';
 import { TransactionTypeEnum } from './transaction/dtos/tansaction-type.enum';
 import { TransactionDto } from './transaction/dtos/tansaction.dto';
-import { TransactionIdDto } from './transaction/dtos/transaction-identifier';
+import { TransactionIdDto } from './transaction/dtos/transaction-identifier.dto';
 import { TransactionLogDto } from './transaction/dtos/transaction-log.dto';
 import { TransactionScopeEnum } from './transaction/dtos/transaction-scope.enum';
 
