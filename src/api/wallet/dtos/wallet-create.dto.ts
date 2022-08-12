@@ -1,4 +1,4 @@
-import { AssetEnum } from "./asset.enum";
+import { AssetEnum } from "../transaction/dtos/asset.enum";
 
 export class WalletCreateDto {
     userId:string;

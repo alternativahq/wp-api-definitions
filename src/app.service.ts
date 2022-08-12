@@ -14,6 +14,15 @@ export class AppService {
     '<li><a href="/wg-iam-service-api.html">Wodo Gaming IAM Service API</a></li>'+
     '<li><a href="/wg-gaming-service-api.html">Wodo Gaming Service API</a></li>'+
     '<li><a href="/wp-blockchain-payment-service-api.html">Wodo Platform Blockchain Payment Service API</a></li>'+
-    '</ul>';
+    '</ul>' +
+    '<h2>Error Codes Library</h2>' +
+    '<ul>' + 
+    '<li><a href="/wodo-error-code-library.html">Wodo Platform Error Codes</a></li>'+
+    '<li><a href="/wodo-error-code-library.html">Wodo Game Hub Error Codes</a></li>'+
+    '<li><a href="/wodo-error-code-library.html">Wodo Game Store Error Codes</a></li>'+
+    '<li><a href="/wodo-error-code-library.html">Wodo Marketplace Error Codes</a></li>'+
+    '<li><a href="/wodo-error-code-library.html">Wodo Incubation Pad Error Codes</a></li>'+
+    '</ul>'
+    ;
   }
 }
