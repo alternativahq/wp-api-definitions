@@ -11,6 +11,9 @@ import { GameServerController } from './api/game-server/game-server.controller';
 import { GamesController } from './api/games/games.controller';
 import { GameLobbiesController } from './api/game-lobbies/game-lobbies.controller';
 import { ChatRoomsController } from './api/chat-rooms/chat-rooms.controller';
+import {
+  NotificationsController
+} from './api/notifications/notifications.controller';
 
 @Module({
   imports: [
@@ -28,6 +31,7 @@ import { ChatRoomsController } from './api/chat-rooms/chat-rooms.controller';
     GamesController,
     GameLobbiesController,
     ChatRoomsController,
+    NotificationsController,
   ],
   providers: [AppService],
 })
