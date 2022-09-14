@@ -63,4 +63,20 @@ export class GameLobbiesController {
     @Body() payload: GameLobbyResultsDto,
     // eslint-disable-next-line @typescript-eslint/no-empty-function
   ): void {}
+
+  @ApiResponse({
+    status: 204,
+    description: 'All players redirected to game server. All players informed about the event',
+  })
+  @Post(':id/started')
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  started(@Param('id') id: string): void {}
+
+  @ApiResponse({
+    status: 204,
+    description: 'Game lobby has been archived. All players informed about the event',
+  })
+  @Post(':id/archive')
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  archive(@Param('id') id: string): void {}
 }
