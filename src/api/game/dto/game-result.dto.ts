@@ -5,10 +5,10 @@ import { ApiProperty } from '@nestjs/swagger';
 export class GameResultDto {
     
     @ApiProperty()
-    gameId:number;
+    gameId:string;
     
     @ApiProperty()
-    lobbyId:number;
+    lobbyId:string;
     
     @ApiProperty({
         type: [GameScoreCardDto],
